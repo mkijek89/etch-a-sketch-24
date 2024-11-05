@@ -13,7 +13,19 @@ body {
 
 #container {
     background-color: white;
-    width: 800px;
-    height: 800px;
+    width: 860px;
+    height: 860px;
+    max-width: 860px;
+    max-height: 860px;
     display: flex;
+    flex-wrap: wrap;
+    
+         
 }
+
+#container > div {
+    background-color: yellow;
+    flex-grow: 1;
+    margin: 0;
+    
+  }
