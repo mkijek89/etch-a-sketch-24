@@ -23,9 +23,16 @@ body {
          
 }
 
-#container > div {
+.start {
     background-color: yellow;
     flex-grow: 1;
     margin: 0;
+    max-height: calc(860px/4); 
+    max-width: calc(860px/4); 
+    height: calc(860px/4); 
+    width: calc(860px/4); 
     
-  }
+}
+.new {
+    background-color: yellow;
+}

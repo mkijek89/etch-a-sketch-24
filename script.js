@@ -1,11 +1,36 @@
-const container = document.querySelector("#container");
-const numberOf = 4;
-const heightOf = 860/numberOf;
-for (let i=0; i < 5; i++) {
-    container.innerHTML += `<div style="max-height: ${heightOf}px;"></div>`;
+const container = document.getElementById('container');
+const input = document.querySelector("input");
+const button = document.querySelector("button");
+const inRow = input.value;
+
+function appendGrid (container, rows) {
     
+    let multiplier = rows*rows;
+    let squareSize = 860/rows;
     
+    if (rows > 100){
+        alert("Number of squares per side must no be higher than 100");
+    } else {
+        for (let i = 0; i < multiplier; i++){
+        const child = document.createElement('div');
+        //child.classList.add('new')
+        child.style.height = `${squareSize}px`;
+        child.style.width = `${squareSize}px`;
+        container.appendChild(child);
+       
+        }
+    }
 }
 
-const divs = document.querySelector("#container > div");
+function clearGrid(container) {
+    while (container.hasChildNodes()) {
+        container.removeChild(container.firstChild);
+      }
+}
 
+window.onload = appendGrid(container, 2);
+
+button.addEventListener('click', () => {
+    clearGrid(container);
+    appendGrid(container, input.value);
+});
