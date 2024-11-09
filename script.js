@@ -19,6 +19,13 @@ function appendGrid (container, rows) {
         container.appendChild(child);
        
         }
+        const squares = document.querySelectorAll(".new");
+        squares.forEach((square) => {
+    
+        square.addEventListener("mouseover", function changeColor () {
+        this.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        }
+        )});
     }
 }
 
@@ -37,10 +44,3 @@ button.addEventListener('click', () => {
     appendGrid(container, input.value);
 });
 
-const squares = document.querySelectorAll(".new");
-squares.forEach((square) => {
-    
-    square.addEventListener("mouseover", function changeColor () {
-        this.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-    }
-    )});
