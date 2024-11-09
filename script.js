@@ -38,7 +38,7 @@ function clearGrid(container) {
       }
 }
 
-window.onload = appendGrid(container, 2);
+window.onload = appendGrid(container, 16);
 
 button.addEventListener('click', () => {
     clearGrid(container);
