@@ -13,7 +13,7 @@ function appendGrid (container, rows) {
     } else {
         for (let i = 0; i < multiplier; i++){
         const child = document.createElement('div');
-        //child.classList.add('new')
+        child.classList.add('new')
         child.style.height = `${squareSize}px`;
         child.style.width = `${squareSize}px`;
         container.appendChild(child);
@@ -21,6 +21,8 @@ function appendGrid (container, rows) {
         }
     }
 }
+
+
 
 function clearGrid(container) {
     while (container.hasChildNodes()) {
@@ -34,3 +36,11 @@ button.addEventListener('click', () => {
     clearGrid(container);
     appendGrid(container, input.value);
 });
+
+const squares = document.querySelectorAll(".new");
+squares.forEach((square) => {
+    
+    square.addEventListener("mouseover", function changeColor () {
+        this.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    }
+    )});
