@@ -5,8 +5,9 @@ const inRow = input.value;
 
 function appendGrid (container, rows) {
     
-    let multiplier = rows*rows;
-    let squareSize = 860/rows;
+    const roundedRows = Math.round(rows);
+    const multiplier = roundedRows*roundedRows;
+    const squareSize = 860/roundedRows;
     
     if (rows > 100){
         alert("Number of squares per side must no be higher than 100");
