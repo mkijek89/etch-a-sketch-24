@@ -10,6 +10,7 @@ function appendGrid (container, rows) {
     
     if (rows > 100){
         alert("Number of squares per side must no be higher than 100");
+        location.reload();
     } else {
         for (let i = 0; i < multiplier; i++){
         const child = document.createElement('div');
